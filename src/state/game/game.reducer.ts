@@ -1,6 +1,10 @@
 import { GameAction, GameActionType } from './game.actions';
 import { GameState, initialGameState } from './game.state';
-import { charactersToString, processGuess } from '../../utils/game.utils';
+import {
+  charactersToString,
+  processGuess,
+  updateKeyboardWithGuess,
+} from '../../utils/game.utils';
 import { WORDS } from '../../fixtures/dictionary';
 
 export function gameReducer(
@@ -54,16 +58,22 @@ export function gameReducer(
       const win = wordGuessed === prevState.answer;
       const isOver = win || prevState.guessesRemaining === 1;
 
+      const newGuess = processGuess(
+        prevState.guessInProgress,
+        prevState.answer
+      );
+
       return {
         ...prevState,
         guessesRemaining: prevState.guessesRemaining - 1,
         guessInProgress: [],
-        guesses: [
-          ...prevState.guesses,
-          processGuess(prevState.guessInProgress, prevState.answer),
-        ],
+        guesses: [...prevState.guesses, newGuess],
         isOver,
         win,
+        keyboardState: updateKeyboardWithGuess(
+          prevState.keyboardState,
+          newGuess
+        ),
       };
     }
     default:

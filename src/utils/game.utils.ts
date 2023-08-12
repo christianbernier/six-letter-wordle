@@ -1,4 +1,4 @@
-import { Character, Guess, Letter, LetterState } from '../model';
+import { Character, Guess, KeyboardState, Letter, LetterState } from '../model';
 
 export const charactersToString = (characters: Character[]): string =>
   characters.reduce(
@@ -43,4 +43,30 @@ export const processGuess = (
   return {
     letters,
   };
+};
+
+export const updateKeyboardWithGuess = (
+  prevKeyboard: KeyboardState,
+  guess: Guess
+): KeyboardState => {
+  const newState: KeyboardState = new Map();
+
+  prevKeyboard.forEach((letterState: LetterState, key: Character): void => {
+    newState.set(key, letterState);
+  });
+
+  guess.letters.forEach((letter: Letter): void => {
+    if (newState.get(letter.letter) === LetterState.NO_MATCH) {
+      newState.set(letter.letter, letter.state);
+    } else if (
+      newState.get(letter.letter) === LetterState.POSITION_WRONG &&
+      letter.state === LetterState.MATCH
+    ) {
+      newState.set(letter.letter, LetterState.MATCH);
+    }
+  });
+
+  console.log(prevKeyboard, newState, guess);
+
+  return newState;
 };

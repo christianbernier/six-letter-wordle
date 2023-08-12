@@ -1,6 +1,18 @@
 import React from 'react';
-import { KeyboardLayout } from '../model';
+import { KeyboardKey, KeyboardLayout } from '../model';
 import { BsFillBackspaceFill } from 'react-icons/bs';
+
+export const ENTER_KEY: KeyboardKey = {
+  character: 'ENTER',
+  width: 75,
+  display: <span className='keyboard--enter-key'>ENTER</span>,
+};
+
+export const BACKSPACE_KEY: KeyboardKey = {
+  character: 'BACKSPACE',
+  width: 75,
+  display: <BsFillBackspaceFill color='white' size={24} />,
+};
 
 export const QWERTY_KEYBOARD_LAYOUT: KeyboardLayout = [
   [
@@ -27,11 +39,7 @@ export const QWERTY_KEYBOARD_LAYOUT: KeyboardLayout = [
     { character: 'L' },
   ],
   [
-    {
-      character: 'ENTER',
-      width: 75,
-      display: <span className='keyboard--enter-key'>ENTER</span>,
-    },
+    ENTER_KEY,
     { character: 'Z' },
     { character: 'X' },
     { character: 'C' },
@@ -39,10 +47,6 @@ export const QWERTY_KEYBOARD_LAYOUT: KeyboardLayout = [
     { character: 'B' },
     { character: 'N' },
     { character: 'M' },
-    {
-      character: 'BACKSPACE',
-      width: 75,
-      display: <BsFillBackspaceFill color='white' size={24} />,
-    },
+    BACKSPACE_KEY,
   ],
 ];
