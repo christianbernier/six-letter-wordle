@@ -1,0 +1,6 @@
+.guess-grid {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  gap: calc(var(--guess-tile-v-spacing) + 2 * var(--guess-tile-border-width));
+}

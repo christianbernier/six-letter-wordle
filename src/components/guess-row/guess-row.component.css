@@ -1,0 +1,50 @@
+.guess-row--container {
+  width: calc(6 * var(--guess-tile-size) + 5 * (var(--guess-tile-h-spacing) + var(--guess-tile-border-width)));
+  height: var(--guess-tile-size);
+  display: flex;
+  flex-direction: row;
+  gap: var(--guess-tile-h-spacing);
+}
+
+.guess-row--blank-tile,
+.guess-row--letter-tile {
+  width: var(--guess-tile-size);
+  height: var(--guess-tile-size);
+  border-style: solid;
+  border-color: var(--guess-tile-border-color);
+  border-width: var(--guess-tile-border-width);
+}
+
+.guess-row--blank-tile {
+  background-color: var(--guess-tile-no-match);
+  border-color: var(--guess-tile-no-match);
+}
+
+.guess-row--letter-state-match {
+  background-color: var(--guess-tile-match);
+  border-color: var(--guess-tile-match);
+}
+
+.guess-row--letter-state-position-wrong {
+  background-color: var(--guess-tile-position-wrong);
+  border-color: var(--guess-tile-position-wrong);
+}
+
+.guess-row--letter-state-no-match {
+  background-color: var(--guess-tile-no-match);
+  border-color: var(--guess-tile-no-match);
+}
+
+.guess-row--letter-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-row--letter-tile > span {
+  font-family: var(--guess-tile-font-family);
+  font-size: var(--guess-tile-font-size);
+  color: var(--guess-tile-font-color);
+  font-weight: var(--guess-tile-font-weight);
+}
+

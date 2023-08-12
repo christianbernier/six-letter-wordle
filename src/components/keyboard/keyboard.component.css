@@ -1,0 +1,50 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.keyboard--row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+.keyboard--key {
+  width: 40px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--guess-tile-no-match);
+  border: none;
+  cursor: pointer;
+}
+
+.keyboard--key > span {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--font-family);
+}
+
+.keyboard--enter-key {
+  font-size: 14px !important;
+}
+
+.keyboard--letter-state-match {
+  background-color: var(--guess-tile-match);
+  border-color: var(--guess-tile-match);
+}
+
+.keyboard--letter-state-position-wrong {
+  background-color: var(--guess-tile-position-wrong);
+  border-color: var(--guess-tile-position-wrong);
+}
+
+.keyboard--letter-state-no-match {
+  background-color: var(--guess-tile-no-match);
+  border-color: var(--guess-tile-no-match);
+}

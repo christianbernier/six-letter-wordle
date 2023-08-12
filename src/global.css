@@ -1,0 +1,26 @@
+:root {
+
+  --font-family: Arial, Helvetica, sans-serif;
+  --green: #538d4e;
+  --yellow: #b59f3b;
+  --light-gray: #3a3a3c;
+  --dark-gray: #3a3a3c;
+
+  --guess-tile-size: 60px;
+  --guess-tile-h-spacing: 5px;
+  --guess-tile-v-spacing: 5px;
+  --guess-tile-border-color: var(--light-gray);
+  --guess-tile-border-width: 2px;
+  --guess-tile-no-match: var(--light-gray);
+  --guess-tile-position-wrong: var(--yellow);
+  --guess-tile-match: var(--green);
+  --guess-tile-font-size: 24px;
+  --guess-tile-font-color: white;
+  --guess-tile-font-weight: bold;
+  --guess-tile-font-family: var(--font-family);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
