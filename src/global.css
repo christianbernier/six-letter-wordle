@@ -4,9 +4,9 @@
   --green: #538d4e;
   --yellow: #b59f3b;
   --light-gray: #3a3a3c;
-  --dark-gray: #3a3a3c;
+  --dark-gray: #121213;
 
-  --guess-tile-size: min(60px, 100vw / 7);
+  --guess-tile-size: min(60px, 100vw / 7, 100vh / 20);
   --guess-tile-h-spacing: 5px;
   --guess-tile-v-spacing: 5px;
   --guess-tile-border-color: var(--light-gray);
