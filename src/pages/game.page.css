@@ -1,5 +1,5 @@
 .game-page {
-  width: 100vw;
+  width: calc(100vw - 20px);
   height: 100vh;
   overflow: hidden;
   background-color: #121213;
@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .game-page--title {

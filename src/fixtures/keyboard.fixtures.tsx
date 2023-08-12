@@ -4,13 +4,13 @@ import { BsFillBackspaceFill } from 'react-icons/bs';
 
 export const ENTER_KEY: KeyboardKey = {
   character: 'ENTER',
-  width: 75,
+  width: 60,
   display: <span className='keyboard--enter-key'>ENTER</span>,
 };
 
 export const BACKSPACE_KEY: KeyboardKey = {
   character: 'BACKSPACE',
-  width: 75,
+  width: 60,
   display: <BsFillBackspaceFill color='white' size={24} />,
 };
 

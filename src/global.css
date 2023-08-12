@@ -6,7 +6,7 @@
   --light-gray: #3a3a3c;
   --dark-gray: #3a3a3c;
 
-  --guess-tile-size: 60px;
+  --guess-tile-size: min(60px, 100vw / 7);
   --guess-tile-h-spacing: 5px;
   --guess-tile-v-spacing: 5px;
   --guess-tile-border-color: var(--light-gray);
@@ -18,6 +18,9 @@
   --guess-tile-font-color: white;
   --guess-tile-font-weight: bold;
   --guess-tile-font-family: var(--font-family);
+
+  --keyboard-key-width: min(40px, 100vw / 13);
+  --keyboard-key-height: calc(1.8 * var(--keyboard-key-width));
 }
 
 * {

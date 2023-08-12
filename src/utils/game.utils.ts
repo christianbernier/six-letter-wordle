@@ -66,7 +66,5 @@ export const updateKeyboardWithGuess = (
     }
   });
 
-  console.log(prevKeyboard, newState, guess);
-
   return newState;
 };
