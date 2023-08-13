@@ -15,8 +15,9 @@
   border-width: var(--guess-tile-border-width);
 }
 
-.guess-row--blank-tile {
-  background-color: var(--guess-tile-no-match);
+.guess-row--blank-tile,
+.guess-row--letter-default {
+  background-color: var(--guess-tile-default);
   border-color: var(--guess-tile-no-match);
 }
 

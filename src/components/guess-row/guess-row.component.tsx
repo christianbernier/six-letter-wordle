@@ -46,7 +46,7 @@ export const GuessRow: FC<GuessRowParams> = (params) => {
             <div
               key={`guess-row--r${params.rowIndex}-c${index}`}
               className={
-                'guess-row--letter-tile guess-row--letter-state-no-match'
+                'guess-row--letter-tile guess-row--letter-state-default'
               }
             >
               <span>{letter}</span>

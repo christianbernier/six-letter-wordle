@@ -1,5 +1,4 @@
 import { Character, Guess, KeyboardState } from '../../model';
-import { getInitialKeyboardState } from '../../utils/keyboard.utils';
 
 export interface GameState {
   isOver: boolean;
@@ -18,5 +17,5 @@ export const initialGameState: GameState = {
   guessesRemaining: 6,
   guesses: [],
   guessInProgress: [],
-  keyboardState: getInitialKeyboardState(),
+  keyboardState: new Map(),
 };

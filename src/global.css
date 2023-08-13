@@ -3,6 +3,7 @@
   --font-family: Arial, Helvetica, sans-serif;
   --green: #538d4e;
   --yellow: #b59f3b;
+  --lightest-gray: #818384;
   --light-gray: #3a3a3c;
   --dark-gray: #121213;
 
@@ -11,6 +12,7 @@
   --guess-tile-v-spacing: 5px;
   --guess-tile-border-color: var(--light-gray);
   --guess-tile-border-width: 2px;
+  --guess-tile-default: var(--dark-gray);
   --guess-tile-no-match: var(--light-gray);
   --guess-tile-position-wrong: var(--yellow);
   --guess-tile-match: var(--green);
@@ -21,6 +23,7 @@
 
   --keyboard-key-width: min(40px, 100vw / 13);
   --keyboard-key-height: calc(1.8 * var(--keyboard-key-width));
+  --keyboard-key-default: var(--lightest-gray);
 }
 
 * {

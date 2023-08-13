@@ -56,6 +56,11 @@ export const updateKeyboardWithGuess = (
   });
 
   guess.letters.forEach((letter: Letter): void => {
+    if (!newState.get(letter.letter)) {
+      newState.set(letter.letter, letter.state);
+      return;
+    }
+
     if (newState.get(letter.letter) === LetterState.NO_MATCH) {
       newState.set(letter.letter, letter.state);
     } else if (

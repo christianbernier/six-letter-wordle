@@ -18,7 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--guess-tile-no-match);
   border: none;
   cursor: pointer;
 }
@@ -32,6 +31,11 @@
 
 .keyboard--enter-key {
   font-size: 14px !important;
+}
+
+.keyboard--letter-state-default {
+  background-color: var(--keyboard-key-default);
+  border-color: var(--keyboard-key-default);
 }
 
 .keyboard--letter-state-match {

@@ -16,13 +16,16 @@ export interface KeyboardParams {
   keyClicked: (character: KeyboardCharacter) => void;
 }
 
+const KEYBOARD_STATE_DEFAULT = 'letter-state-default';
+
 export const Keyboard: FC<KeyboardParams> = (params) => {
-  const keyLetterState = (key: KeyboardKey): LetterState => {
+  const keyboardStateCssClass = (key: KeyboardKey): string => {
     if (key.character === 'ENTER' || key.character === 'BACKSPACE') {
-      return LetterState.NO_MATCH;
+      return KEYBOARD_STATE_DEFAULT;
     }
 
-    return params.state.get(key.character) || LetterState.NO_MATCH;
+    const keyState = params.state.get(key.character);
+    return keyState ? letterStateCssClass(keyState) : KEYBOARD_STATE_DEFAULT;
   };
 
   return (
@@ -32,8 +35,8 @@ export const Keyboard: FC<KeyboardParams> = (params) => {
           {keyRow.map((keyboardKey: KeyboardKey, keyIndex: number) => (
             <button
               key={`keyboard--r${rowIndex}-c${keyIndex}`}
-              className={`keyboard--key keyboard--${letterStateCssClass(
-                keyLetterState(keyboardKey)
+              className={`keyboard--key keyboard--${keyboardStateCssClass(
+                keyboardKey
               )}`}
               style={{ width: keyboardKey.width || undefined }}
               onClick={() => params.keyClicked(keyboardKey.character)}
